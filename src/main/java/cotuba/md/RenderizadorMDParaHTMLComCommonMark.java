@@ -1,9 +1,11 @@
 package cotuba.md;
 
+import cotuba.application.RenderizadorMDParaHTML;
 import cotuba.domain.Capitulo;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -13,8 +15,10 @@ import java.nio.file.PathMatcher;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class RenderizadorMDParaHTML {
+@Component
+public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHTML {
 
+    @Override
     public List<Capitulo> renderiza(Path diretorioDosMD) {
         return obtemArquivosMD(diretorioDosMD).stream()
                 .map(arquivoMD -> {
