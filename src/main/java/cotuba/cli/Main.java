@@ -1,7 +1,7 @@
 package cotuba.cli;
 
 import cotuba.application.Cotuba;
-import cotuba.application.CotubaConfig;
+import cotuba.CotubaConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
